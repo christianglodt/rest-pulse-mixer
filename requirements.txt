@@ -1,0 +1,3 @@
+wheel
+flask_restful==0.3.8
+pulsectl==20.5.1
