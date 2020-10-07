@@ -10,6 +10,10 @@ app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
+PATH_PREFIX = os.environ.get('PATH_PREFIX', '').strip('/')
+if PATH_PREFIX:
+    PATH_PREFIX = '/' + PATH_PREFIX
+
 def get_sink_id(pulse, sink):
     server = pulse.server or '(local)'
     return f'{server}|{sink.name}'
@@ -67,9 +71,9 @@ class SinkChannels(Resource):
 
             return get_sink_by_id(pulse, sink_id)['channels']
 
-api.add_resource(SinkList, '/sinks')
-api.add_resource(Sink, '/sink/<sink_id>')
-api.add_resource(SinkChannels, '/sink/<sink_id>/channels')
+api.add_resource(SinkList, f'{PATH_PREFIX}/sinks')
+api.add_resource(Sink, f'{PATH_PREFIX}/sink/<sink_id>')
+api.add_resource(SinkChannels, f'{PATH_PREFIX}/sink/<sink_id>/channels')
 
 if __name__ == '__main__':
     app.run(debug=True)
