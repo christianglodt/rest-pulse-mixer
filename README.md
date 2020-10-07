@@ -1,5 +1,6 @@
 # rest-pulse-mixer
-A simple REST API for changing the volume of PulseAudio sinks.
+A simple REST API for changing the volume of PulseAudio sinks. It is developed
+together with its frontend [react-pulse-mixer](https://github.com/christianglodt/react-pulse-mixer).
 
 ## Configuration
 Configure the PulseAudio server to connect to using the `PULSE_SERVER` environment variable. You can also configure a path prefix using the `PATH_PREFIX` environment variable.
