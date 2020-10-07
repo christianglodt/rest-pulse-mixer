@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from flask import Flask, request, redirect
-from flask_restful import reqparse, abort, Api, Resource
+from flask_restful import Api, Resource
 from flask_cors import CORS
 import pulsectl
 import os
@@ -9,8 +9,6 @@ import os
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
-
-parser = reqparse.RequestParser()
 
 def get_sink_id(pulse, sink):
     server = pulse.server or '(local)'
