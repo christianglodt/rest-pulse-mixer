@@ -9,9 +9,9 @@ Configure the PulseAudio server to connect to using the `PULSE_SERVER` environme
 Nr | URL | Method | Description
 ---|-----|--------|------------
  1 | `/sinks` | GET | Retrieve a list of all sinks
- 2 | `/sinks/<sink_id>` | GET | Retrieve a single sink by its sink_id
- 3 | `/sinks/<sink_id>/channels` | GET | Retrieve the channel volumes of single sink
- 4 | `/sinks/<sink_id>/channels` | POST | Set channel volumes of a single sink
+ 2 | `/sink/<sink_id>` | GET | Retrieve a single sink by its sink_id
+ 3 | `/sink/<sink_id>/channels` | GET | Retrieve the channel volumes of single sink
+ 4 | `/sink/<sink_id>/channels` | POST | Set channel volumes of a single sink
 
 The endpoints work as follows:
 1. Returns a list of sinks including all their properties. Also includes a computed
